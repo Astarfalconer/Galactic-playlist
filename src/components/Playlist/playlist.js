@@ -4,7 +4,12 @@ import "./Playlist.css";
 
 function PlayList() {
 return (
-    <div>
+    <div className="PlayList">
+        <input/>
+        <TrackList/>
+        <button className="PlayList-save">
+        Save to PlayList
+        </button>
         
     </div>
 )

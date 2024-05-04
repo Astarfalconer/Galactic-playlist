@@ -1,5 +1,5 @@
 const clientId = '2e817535263d458c8f7149ab4bae4872';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'http://localhost:3000/callback';
 
 let accessToken ="";
 
@@ -30,11 +30,11 @@ search(term) {
         }
       }).then(response => {
         return response.json()
-      }).then(jsonRespnse => {
+      }).then(jsonResponse => {
         if(!jsonResponse.tracks) {
             return [];
         }
-        return jsonRespons.tracks.items.map(track => ({
+        return jsonResponse.tracks.items.map(track => ({
             id: track.id,
             name: track.name,
             artist: track.artists[0].name,
@@ -44,7 +44,7 @@ search(term) {
       });
     },
     savePlaylist(name, trackUris) {
-      if(!name || trackUris.length) {
+      if(!name || !trackUris.length) {
         return;
       };
 
@@ -54,15 +54,15 @@ search(term) {
 
       return fetch('https://api.spotify.com/v1/me', {headers:headers}
       ).then(response => response.json()
-      ).then(jsonRespnse => {
-        userId = jsonRespnse.id;
+      ).then(jsonResponse => {
+        userId = jsonResponse.id;
       return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
         headers: headers,
         method: 'POST',
         body: JSON.stringify({name: name})
       }).then(response => response.json()
-      ).then(jsonRespnse => {
-        const playlistId = jsonRespnse.id;
+      ).then(jsonResponse => {
+        const playlistId = jsonResponse.id;
         return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
           headers: headers,
           method: 'POST',

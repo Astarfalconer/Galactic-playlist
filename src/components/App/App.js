@@ -42,7 +42,7 @@ const savePlaylist = useCallback (() => {
   return (
       
       <div>
-        <div>
+        <div className="title">
           <h1>Galactic Playlist</h1>
         </div>
         <div className='App'>

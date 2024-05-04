@@ -9,13 +9,22 @@ html {
 }
 
 h1 {
-  padding: 1.77rem 0;
-  background-color: #010c3f;
+  width: 51em;
+  padding: 2em;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 1.88rem;
   color: #fff;
   
+}
+
+.title {
+display: flex;
+align-items: center;
+margin: auto;
+height: 4em;
+width: auto;
+background-color: #010c3f;
 }
 
 

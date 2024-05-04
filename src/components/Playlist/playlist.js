@@ -5,11 +5,11 @@ import "./Playlist.css";
 function PlayList(props) {
     const handleNameChange = useCallback ((event) => {
     props.onNameChange(event.target.value)
-     }, [props.onNameChange] );
+     }, [props.onNameChange] 
+     
+     );
 
-     const HandleSavePlaylist = useCallback ((event) => {
-        props.onSave(props.playlistTracks)
-     }, [props.onSave])
+    
 return (
     <div className="PlayList">
         <input onChange={handleNameChange}defaultValue={props.playlistName}/>
@@ -17,7 +17,7 @@ return (
         tracks={props.playlistTracks}
         isRemoval={true}
         onRemove={props.onRemove}/>
-        <button className="PlayList-save" onClick={HandleSavePlaylist}>
+        <button className="PlayList-save" onClick={props.onSave}>
         Save to PlayList
         </button>
         

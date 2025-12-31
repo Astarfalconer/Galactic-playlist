@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Galactic Playlist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+**Galactic Playlist** is a React-based web application that allows users to search for music using the Spotify Web API, curate a custom playlist, and save that playlist directly to their Spotify account.
 
-## Available Scripts
+The project demonstrates frontend application structure, state management, and real-world API integration, with a focus on clean user interaction and asynchronous data flow.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Core Application Flow
+The application is structured around a simple, two-panel interface:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Left panel:** Search results returned from the Spotify API  
+- **Right panel:** The user’s active playlist  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users search for tracks, add or remove them from their playlist, rename the playlist, and save it directly to their Spotify account.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+- Search for tracks using the Spotify Web API
+- View search results and playlist side-by-side
+- Add tracks from search results to a playlist
+- Remove tracks from the playlist
+- Update playlist name
+- Save playlists directly to the user’s Spotify account
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
+- **React**
+- **JavaScript (ES6+)**
+- **Spotify Web API**
+- Fetch-based API requests
+- Client-side state management using React hooks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Application Architecture (High-Level)
+The app consists of a main application component responsible for rendering and coordinating a set of smaller, focused components, including:
 
-### `npm run eject`
+- Search bar
+- Search results list
+- Playlist view
+- Individual track components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+State is managed at the application level and passed down via props. Callback functions are used to handle user actions such as searching, adding/removing tracks, updating playlist names, and saving playlists.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Spotify API Integration
+The application integrates with the **Spotify Web API** to authenticate users and manage playlists.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Key aspects include:
+- OAuth-based authentication using a client ID and redirect URI
+- Access token retrieval and renewal when tokens expire
+- Track search using Spotify’s search endpoint
+- Playlist creation and track saving using Spotify’s playlist endpoints
 
-## Learn More
+Tracks are managed using their unique Spotify URIs, ensuring playlists are saved accurately to the user’s account.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## What This Project Demonstrates
+- Building a complete React application from scratch
+- Managing application state across multiple components
+- Working with third-party APIs and OAuth authentication
+- Handling asynchronous requests and API responses
+- Translating user actions into persistent changes on an external service
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+This project was built as a focused demonstration of frontend fundamentals and API integration rather than advanced UI design or styling. The emphasis is on clarity, correctness, and functional completeness.
